@@ -49,6 +49,7 @@ ImagePreloader.simplePreload = function(imageSource) {
             }
         } else if (typeof imageSource === 'string') {
             img = new Image();
+            img.crossOrigin = "Anonymous";
             img.onload = resolve.bind(null, img);
             img.onerror = img.onabort = reject.bind(null, img);
             img.src = imageSource;
